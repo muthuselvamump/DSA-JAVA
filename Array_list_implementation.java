@@ -46,7 +46,28 @@ class dynamic_array{
             }
             arr[i]=arr[i+1];
         }
+        if(capacity>intialcapacity && capacity>size*3){
+            shrink();
+        }
         --size;
+
+    }
+    void shrink(){
+        capacity/=2;
+        arr=Arrays.copyOf(arr, capacity);
+
+    }
+    void search(int val){
+        int flag=0;
+        for(int i=0;i<size;i++){
+            if(arr[i]==val){
+                System.out.println("index is : "+i);
+                flag=1;
+            }
+        }
+        if(flag==0){
+            System.out.println("Not present in Array List");
+        }
 
     }
 
