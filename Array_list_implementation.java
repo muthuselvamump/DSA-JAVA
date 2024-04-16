@@ -70,6 +70,9 @@ class dynamic_array{
         }
 
     }
+    void update(int indexup,int up){
+        arr[indexup]=up;
+    }
 
 }
 public class Array_list_implementation {
@@ -109,6 +112,11 @@ public class Array_list_implementation {
                     int search=scan.nextInt();
                     list.search(search);
                     break;
+            case 7:System.out.println("enter index");
+            int indexup=scan.nextInt();
+            System.out.println("eneter element");
+            int up=scan.nextInt();
+            list.update(indexup, up);
             //System.exit(0);
             default:
                 System.out.println("invalid selection");
