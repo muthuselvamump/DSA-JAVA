@@ -104,7 +104,11 @@ public class Array_list_implementation {
                     int delindex=scan.nextInt();
                     list.delete(delindex);
                     break;
-            case 5:break outer;
+ //           case 5:break outer;
+            case 6:System.out.println("enter element");
+                    int search=scan.nextInt();
+                    list.search(search);
+                    break;
             //System.exit(0);
             default:
                 System.out.println("invalid selection");
