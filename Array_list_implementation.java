@@ -79,6 +79,18 @@ class dynamic_array{
         size=0;
         capacity=intialcapacity;
     }
+    void contains(int val){
+        int flag=0;
+        for(int i=0;i<size;i++){
+            if(arr[i]==val){
+                System.out.println("its contains");
+                flag=1;
+            }
+        }
+        if(flag==0){
+            System.out.println("not contains");
+        }
+    }
 
 }
 public class Array_list_implementation {
@@ -91,7 +103,10 @@ public class Array_list_implementation {
         System.out.println("2.insert into particular postion");
         System.out.println("3.print array element");
         System.out.println("4.delete a element");
-        System.out.println("5.exit");
+        System.out.println("5.clear");
+        System.out.println("6.for search");
+        System.out.println("7.update");
+        System.out.println("8.its contains");
         int val=scan.nextInt();
         switch(val){
             case 1:System.out.println("enter value");
@@ -123,6 +138,9 @@ public class Array_list_implementation {
             System.out.println("eneter element");
             int up=scan.nextInt();
             list.update(indexup, up);
+            case 8:System.out.println("enter the value");
+                    int val1=scan.nextInt();
+                    list.contains(val1);
             //System.exit(0);
             default:
                 System.out.println("invalid selection");
