@@ -73,6 +73,12 @@ class dynamic_array{
     void update(int indexup,int up){
         arr[indexup]=up;
     }
+    void clear(){
+        int []temp=new int[intialcapacity];
+        arr=temp;
+        size=0;
+        capacity=intialcapacity;
+    }
 
 }
 public class Array_list_implementation {
@@ -107,7 +113,7 @@ public class Array_list_implementation {
                     int delindex=scan.nextInt();
                     list.delete(delindex);
                     break;
- //           case 5:break outer;
+            case 5:list.clear();
             case 6:System.out.println("enter element");
                     int search=scan.nextInt();
                     list.search(search);
