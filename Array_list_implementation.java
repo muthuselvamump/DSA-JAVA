@@ -95,7 +95,14 @@ class dynamic_array{
         if(size==capacity){
             extend();
         }
-        
+        int temp;
+        for(int i=0;i<size;i++){
+            temp=arr[i];
+            arr[i]=inser;
+            inser=temp;
+
+
+        }
     }
 
 }
