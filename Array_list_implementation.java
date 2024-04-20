@@ -91,6 +91,12 @@ class dynamic_array{
             System.out.println("not contains");
         }
     }
+    void insertatfront(int inser){
+        if(size==capacity){
+            extend();
+        }
+        
+    }
 
 }
 public class Array_list_implementation {
