@@ -1,6 +1,4 @@
 import java.util.*;
-
-import javax.sound.midi.Soundbank;
 class dynamic_array{
     final int intialcapacity=5;
     private int arr[];
@@ -147,7 +145,7 @@ public class Array_list_implementation {
                     list.delete(delindex);
                     break;
             case 5:list.clear();
-    
+                    break;
             case 6:System.out.println("enter element");
                     int search=scan.nextInt();
                     list.search(search);
