@@ -1,4 +1,6 @@
 import java.util.*;
+
+import javax.sound.midi.Soundbank;
 class dynamic_array{
     final int intialcapacity=5;
     private int arr[];
@@ -103,6 +105,7 @@ class dynamic_array{
 
 
         }
+        size++;
     }
 
 }
@@ -120,6 +123,8 @@ public class Array_list_implementation {
         System.out.println("6.for search");
         System.out.println("7.update");
         System.out.println("8.its contains");
+        System.out.println("9.insert at front");
+        System.out.println("10.exit");
         int val=scan.nextInt();
         switch(val){
             case 1:System.out.println("enter value");
@@ -142,6 +147,7 @@ public class Array_list_implementation {
                     list.delete(delindex);
                     break;
             case 5:list.clear();
+    
             case 6:System.out.println("enter element");
                     int search=scan.nextInt();
                     list.search(search);
@@ -151,10 +157,17 @@ public class Array_list_implementation {
             System.out.println("eneter element");
             int up=scan.nextInt();
             list.update(indexup, up);
+            break;
             case 8:System.out.println("enter the value");
                     int val1=scan.nextInt();
                     list.contains(val1);
+                    break;
+            case 9:System.out.println("enter element for insert at front");
+                    int insefr=scan.nextInt();
+                    list.insertatfront(insefr);
+                    break;
             //System.exit(0);
+            case 10:break outer;
             default:
                 System.out.println("invalid selection");
         }
