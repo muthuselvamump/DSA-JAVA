@@ -1,5 +1,12 @@
 import java.util.*;
 public class Generic_Array_Implementation{
+    int point;
+    int inticapacity=5;
+    int []arr;
+    public Generic_Array_Implementation(){
+        point=-1;
+        arr=new int[inticapacity];
+    }
     public static void main(String []args){
        Generic_Array_Implementation ar=new Generic_Array_Implementation();
         while(true){
