@@ -7,6 +7,16 @@ public class Generic_Array_Implementation{
         point=-1;
         arr=new int[inticapacity];
     }
+    public void expandarr(){
+        arr=Arrays.copyOf(arr,inticapacity*2);
+        inticapacity*=2;
+    }
+    public void addvalue(int a){
+        if(point==inticapacity-1){
+            expandarr();
+        }
+        arr[++point]=a;
+    }
     public static void main(String []args){
        Generic_Array_Implementation ar=new Generic_Array_Implementation();
         while(true){
@@ -17,7 +27,9 @@ public class Generic_Array_Implementation{
             int arrnum=scan.nextInt();
             switch(arrnum){
                 case 1:{
-                    System.out.println("hello");
+                    System.out.println("Enter a element");
+                    int va=scan.nextInt();
+                    ar.addvalue(va);
                     break;
                 }
                 case 2:{
