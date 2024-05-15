@@ -1,32 +1,33 @@
 import java.util.*;
-public class Generic_Array_Implementation{
+public class Generic_Array_Implementation<T>{
     int point;
     int inticapacity=5;
-    int []arr;
+    T []arr;
+    @SuppressWarnings("unchecked")
     public Generic_Array_Implementation(){
         point=-1;
-        arr=new int[inticapacity];
+        arr=(T[])new Object[inticapacity];
     }
     public void expandarr(){
         arr=Arrays.copyOf(arr,inticapacity*2);
         inticapacity*=2;
     }
-    public void addvalue(int a){
+    public void addvalue(T a){
         if(point==inticapacity-1){
             expandarr();
         } 
         arr[++point]=a;
     }
     public void deleteind(int index){
-        int vali=arr[index+1];
         for(int i=index;i<=point;i++){
             if(i==point){
-                arr[i]=0;
+                arr[i]=null;
                 break;
             }
             arr[i]=arr[i+1];
 
         }
+        point--;
     }
     public void display(){
         System.out.println();
@@ -36,17 +37,19 @@ public class Generic_Array_Implementation{
         System.out.println();
     }
     public static void main(String []args){
-       Generic_Array_Implementation ar=new Generic_Array_Implementation();
+       Generic_Array_Implementation<String> ar=new Generic_Array_Implementation<String>();
         while(true){
             System.out.println("1 for add Element");
             System.out.println("2.delete Element");
-            System.out.println("5 for stop");
+            System.out.println("3:for display the element");
+            System.out.println("9 for stop");
             Scanner scan=new Scanner(System.in);
             int arrnum=scan.nextInt();
+            scan.nextLine();
             switch(arrnum){
                 case 1:{
                     System.out.println("Enter a element");
-                    int va=scan.nextInt();
+                    String va=scan.nextLine();
                     ar.addvalue(va);
                     break;
                 }
@@ -58,6 +61,10 @@ public class Generic_Array_Implementation{
                 }
                 case 3:{
                     ar.display();
+                    break;
+                }
+                case 9:{
+                    System.exit(0);
                 }
             }
         }
