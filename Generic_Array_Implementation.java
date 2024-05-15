@@ -14,8 +14,26 @@ public class Generic_Array_Implementation{
     public void addvalue(int a){
         if(point==inticapacity-1){
             expandarr();
-        }
+        } 
         arr[++point]=a;
+    }
+    public void deleteind(int index){
+        int vali=arr[index+1];
+        for(int i=index;i<=point;i++){
+            if(i==point){
+                arr[i]=0;
+                break;
+            }
+            arr[i]=arr[i+1];
+
+        }
+    }
+    public void display(){
+        System.out.println();
+        for (int i=0;i<=point;i++){
+            System.out.print(arr[i]+ " ");
+        }
+        System.out.println();
     }
     public static void main(String []args){
        Generic_Array_Implementation ar=new Generic_Array_Implementation();
@@ -33,8 +51,13 @@ public class Generic_Array_Implementation{
                     break;
                 }
                 case 2:{
-                    System.out.println("world");
+                    System.out.println("Enter the index");
+                    int ind=scan.nextInt();
+                    ar.deleteind(ind);
                     break;
+                }
+                case 3:{
+                    ar.display();
                 }
             }
         }
