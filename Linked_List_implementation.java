@@ -3,10 +3,20 @@ class node{
     node head;
     node next;
     node(){
-        head.next=null;
+        head=null;
     }
     void insertatbegin(int a){
-        head.Data=a;
+        node nextq=new node();
+        if(head == null){
+            head.Data=a;
+            head.next=null;
+        }
+        nextq.Data=a;
+        nextq.next=head;
+        head=nextq;
+
+
+
 
     }
 }
@@ -17,5 +27,3 @@ public class Linked_List_implementation {
     }
     
 }
-
-0
