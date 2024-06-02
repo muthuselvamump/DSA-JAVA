@@ -2,6 +2,7 @@ class node{
     int Data;
     node head;
     node next;
+    int count=0;
     node(){
         head=null;
     }
@@ -18,6 +19,11 @@ class node{
 
 
 
+    }
+    void display(){
+        for(int i=0;i<count;i++){
+        
+        }
     }
 }
 public class Linked_List_implementation {
