@@ -3,9 +3,21 @@ class Node{
     Node next;
 }
 class Linkedlist{
+    Linkedlist(){
+        head=null;
+    }
     Node head;
     public void insertatbegin(int val){
-        if
+        Node newnode=new Node();
+        if(head ==null){
+            newnode.Data=val;
+            newnode.next=null;
+        }
+        else{
+            newnode.Data=val;
+            newnode.next=head;
+            head=newnode;
+        }
     }
 
 }
