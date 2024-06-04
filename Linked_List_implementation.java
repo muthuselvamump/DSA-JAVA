@@ -12,6 +12,7 @@ class Linkedlist{
         if(head ==null){
             newnode.Data=val;
             newnode.next=null;
+            head=newnode;
         }
         else{
             newnode.Data=val;
@@ -20,9 +21,10 @@ class Linkedlist{
         }
     }
     public void display(){
-        Node next=head;
-        while(next ==null){
-            next.next
+        Node temp=head;
+        while(temp != null){
+            System.out.println(temp.Data);
+            temp=temp.next;
         }
     }
 
@@ -32,6 +34,7 @@ public class Linked_List_implementation {
         Linkedlist linklist=new Linkedlist();
         linklist.insertatbegin(10);
         linklist.insertatbegin(8);
+        linklist.display();
     }
     
 }
