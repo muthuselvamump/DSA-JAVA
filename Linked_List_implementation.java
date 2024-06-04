@@ -19,12 +19,19 @@ class Linkedlist{
             head=newnode;
         }
     }
+    public void display(){
+        Node next=head;
+        while(next ==null){
+            next.next
+        }
+    }
 
 }
 public class Linked_List_implementation {
     public static void main(String []args){
         Linkedlist linklist=new Linkedlist();
         linklist.insertatbegin(10);
+        linklist.insertatbegin(8);
     }
     
 }
