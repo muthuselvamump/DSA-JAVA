@@ -23,9 +23,10 @@ class Linkedlist{
     public void display(){
         Node temp=head;
         while(temp != null){
-            System.out.println(temp.Data);
+            System.out.print(temp.Data + " ");
             temp=temp.next;
         }
+        System.out.println();
     }
     public void insertatend(int end){
      Node temp=head;
@@ -35,7 +36,7 @@ class Linkedlist{
      Node endn=new Node();
      endn.Data=end;
      endn.next=null;
-     temp=endn;
+     temp.next=endn;
      
 
     }
