@@ -28,7 +28,16 @@ class Linkedlist{
         }
     }
     public void insertatend(int end){
-        
+     Node temp=head;
+     while(temp.next != null){
+        temp=temp.next;
+     }
+     Node endn=new Node();
+     endn.Data=end;
+     endn.next=null;
+     temp=endn;
+     
+
     }
 
 }
@@ -39,6 +48,7 @@ public class Linked_List_implementation {
         linklist.insertatbegin(8);
         linklist.display();
         linklist.insertatend(5);
+        linklist.display();
     }
     
 }
