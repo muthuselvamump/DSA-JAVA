@@ -27,6 +27,9 @@ class Linkedlist{
             temp=temp.next;
         }
     }
+    public void insertatend(int end){
+        
+    }
 
 }
 public class Linked_List_implementation {
@@ -35,6 +38,7 @@ public class Linked_List_implementation {
         linklist.insertatbegin(10);
         linklist.insertatbegin(8);
         linklist.display();
+        linklist.insertatend(5);
     }
     
 }
