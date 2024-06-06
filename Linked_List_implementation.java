@@ -40,6 +40,11 @@ class Linkedlist{
      
 
     }
+    public void insertatpos(int po,int va){
+        if(head==null){
+            System.out.println("LinkedList Is Empty");
+        }
+    }
 
 }
 public class Linked_List_implementation {
@@ -50,6 +55,8 @@ public class Linked_List_implementation {
         linklist.display();
         linklist.insertatend(5);
         linklist.display();
+        linklist.insertatpos(2,99);
+
     }
     
 }
