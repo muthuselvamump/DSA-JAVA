@@ -41,9 +41,19 @@ class Linkedlist{
 
     }
     public void insertatpos(int po,int va){
+        Node temp=head;
+        Node n=new Node();
+        n.Data=va;
         if(head==null){
             System.out.println("LinkedList Is Empty");
         }
+        else{
+            for(int i=1;i<po-1;i++){
+                temp=temp.next;
+            }
+        }
+        n.next=temp.next;
+        temp.next=n;
     }
 
 }
@@ -56,6 +66,7 @@ public class Linked_List_implementation {
         linklist.insertatend(5);
         linklist.display();
         linklist.insertatpos(2,99);
+        linklist.display();
 
     }
     
