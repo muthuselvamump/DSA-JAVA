@@ -56,7 +56,15 @@ class Linkedlist{
         temp.next=n;
     }
     public void deleteatpos(int posd){
-        
+        Node temp=head;
+        Node prev=head;
+        for(int i=0;i<posd;++i){
+            if(i==posd-){
+                prev=temp;
+            }
+            temp=temp.next;
+        }
+        prev.next=temp;
     }
 
 }
@@ -70,7 +78,8 @@ public class Linked_List_implementation {
         linklist.display();
         linklist.insertatpos(2,99);
         linklist.display();
-        linkedlist.deleteatpos(2);
+        linklist.deleteatpos(2);
+        linklist.display();
 
     }
     
