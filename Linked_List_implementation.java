@@ -55,6 +55,9 @@ class Linkedlist{
         n.next=temp.next;
         temp.next=n;
     }
+    public void deleteatpos(int posd){
+        
+    }
 
 }
 public class Linked_List_implementation {
@@ -67,6 +70,7 @@ public class Linked_List_implementation {
         linklist.display();
         linklist.insertatpos(2,99);
         linklist.display();
+        linkedlist.deleteatpos(2);
 
     }
     
