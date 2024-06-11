@@ -58,8 +58,8 @@ class Linkedlist{
     public void deleteatpos(int posd){
         Node temp=head;
         Node prev=head;
-        for(int i=0;i<posd;++i){
-            if(i==posd-){
+        for(int i=1;i<=posd;++i){
+            if(i==posd-1){
                 prev=temp;
             }
             temp=temp.next;
@@ -78,7 +78,12 @@ public class Linked_List_implementation {
         linklist.display();
         linklist.insertatpos(2,99);
         linklist.display();
-        linklist.deleteatpos(2);
+        //linklist.deleteatpos(2);
+        linklist.display();
+        linklist.insertatbegin(20);
+        linklist.insertatbegin(18);
+        linklist.display();
+        linklist.deleteatpos(4);
         linklist.display();
 
     }
