@@ -63,6 +63,7 @@ class Linkedlist{
                 prev=temp;
             }
             temp=temp.next;
+
         }
         prev.next=temp;
     }
@@ -83,7 +84,7 @@ public class Linked_List_implementation {
         linklist.insertatbegin(20);
         linklist.insertatbegin(18);
         linklist.display();
-        linklist.deleteatpos(4);
+        linklist.deleteatpos(6);
         linklist.display();
 
     }
