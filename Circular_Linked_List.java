@@ -1,8 +1,12 @@
 class node{
-    
+    node next;
+    int data;
 }
 class Circular_linked_list{
-
+    node head;
+    public void Circular_linked_List(){
+        head=null;
+    }
 
 }
 public class Circular_Linked_List {
