@@ -15,6 +15,7 @@ class Clist{
             head=temp;
         }
         else{
+            temp.data=val1;
             temp.next=head;
             head=temp;
         }
@@ -22,7 +23,7 @@ class Clist{
     }
     public void display(){
      node temp=head;
-     while(temp.next==head){
+     while(temp.next!=head){
         System.out.println(temp.data);
         temp=temp.next;
      }   
