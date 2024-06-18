@@ -1,13 +1,13 @@
-class Node1{
-    int Data;
+class Node1<T>{
+    T Data;
     Node1 next;
 }
-class Linkedlist1{
+class Linkedlist1<T>{
     Linkedlist1(){
         head=null;
     }
     Node1 head;
-    public void insertatbegin(int val){
+    public void insertatbegin(T val){
         Node1 newnode=new Node1();
         if(head ==null){
             newnode.Data=val;
@@ -28,7 +28,7 @@ class Linkedlist1{
         }
         System.out.println();
     }
-    public void insertatend(int end){
+    public void insertatend(T end){
      Node1 temp=head;
      while(temp.next != null){
         temp=temp.next;
@@ -40,7 +40,7 @@ class Linkedlist1{
      
 
     }
-    public void insertatpos(int po,int va){
+    public void insertatpos(int po,T va){
         Node1 temp=head;
         Node1 n=new Node1();
         n.Data=va;
@@ -72,7 +72,7 @@ class Linkedlist1{
 public class Generic_Linked_List_implementation{
     public static void main(String []args){
         Linkedlist1 linklist=new Linkedlist1();
-        linklist.insertatbegin(10);
+        linklist.insertatbegin("hello");
         linklist.insertatbegin(8);
         linklist.display();
         linklist.insertatend(5);
