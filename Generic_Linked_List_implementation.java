@@ -1,8 +1,10 @@
+import java.util.Iterator;
+
 class Node1<T>{
     T Data;
     Node1 next;
 }
-class Linkedlist1<T>{
+class Linkedlist1<T> implements Iterable{
     Linkedlist1(){
         head=null;
     }
@@ -67,13 +69,27 @@ class Linkedlist1<T>{
         }
         prev.next=temp;
     }
+    public Iterator<T> iterator(){
+        return new Iterator<T>() {
+            Node1 temp=head;
+            public boolean hasNext(){
+                return temp!=null;
+            }
+           public T next(){
+                T rval=(T) temp.Data;
+                temp=temp.next;
+                return rval;
+            }
+
+        };
+    }
 
 }
 public class Generic_Linked_List_implementation{
     public static void main(String []args){
         Linkedlist1<String> linklist=new Linkedlist1<String>();
         linklist.insertatbegin("hello");
-        linklist.insertatbegin("world");
+        linklist.insertatbegin("worl");
         linklist.display();
         linklist.insertatend("java");
         linklist.display();
@@ -86,6 +102,10 @@ public class Generic_Linked_List_implementation{
         linklist.display();
         linklist.deleteatpos(6);
         linklist.display();
+        System.out.println("for each loop");
+        for(Object a:linklist){
+            System.out.println(a);
+        }
 
     }
     
