@@ -71,18 +71,18 @@ class Linkedlist1<T>{
 }
 public class Generic_Linked_List_implementation{
     public static void main(String []args){
-        Linkedlist1 linklist=new Linkedlist1();
+        Linkedlist1<String> linklist=new Linkedlist1<String>();
         linklist.insertatbegin("hello");
-        linklist.insertatbegin(8);
+        linklist.insertatbegin("world");
         linklist.display();
-        linklist.insertatend(5);
+        linklist.insertatend("java");
         linklist.display();
-        linklist.insertatpos(2,99);
+        linklist.insertatpos(2,"developer");
         linklist.display();
         //linklist.deleteatpos(2);
         linklist.display();
-        linklist.insertatbegin(20);
-        linklist.insertatbegin(18);
+        linklist.insertatbegin("dsa");
+        linklist.insertatbegin("oops");
         linklist.display();
         linklist.deleteatpos(6);
         linklist.display();
