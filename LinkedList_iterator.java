@@ -1,9 +1,4 @@
 import java.util.Iterator;
-
-class iter implements Iterator<T>{
-    
-}
-
 class Linkedlist2<T>{
     Linkedlist2(){
         head=null;
@@ -11,6 +6,21 @@ class Linkedlist2<T>{
     class Node2{
         T Data;
         Node2 next;
+    }
+    public Iterator<T> iterator() {
+        return new iter();
+    }
+    class iter implements Iterator<T>{
+        Node2 temp=head;
+        //Iterator<String> forit=new <String>Iterator();
+        public boolean hasNext(){
+            return temp!=null;
+        }
+        public T next(){
+            T val=temp.Data;
+            temp=temp.next;
+            return val; 
+        }
     }
     Node2 head;
     public void insertatbegin(T val){
@@ -97,7 +107,10 @@ public class LinkedList_iterator{
         /*for(Object a:linklist){
             System.out.println(a);
         }*/
-
+        Iterator it1=linklist.iterator();
+        while (it1.hasNext()) {
+            System.out.println(it1.next());
+        }
     }
     
 } 
