@@ -1,5 +1,5 @@
 import java.util.Iterator;
-class Linkedlist2<T>{
+class Linkedlist2<T> implements Iterable<T>{
     Linkedlist2(){
         head=null;
     }
@@ -110,6 +110,10 @@ public class LinkedList_iterator{
         Iterator it1=linklist.iterator();
         while (it1.hasNext()) {
             System.out.println(it1.next());
+        }
+        System.out.println("For Each Loop");
+        for(Object obj:linklist){
+            System.out.println(obj);
         }
     }
     
