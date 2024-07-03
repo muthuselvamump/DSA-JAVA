@@ -26,8 +26,25 @@ public void insertat(int a){
 public void Displayrev(){
     Nodes temp=Head;
     while(temp!=null){
-        System.out.println(temp.Data);
+        System.out.print(" "+temp.Data);
         temp=temp.next;
+    }
+}
+public void reverse(){
+    if(Head==null){
+        System.out.println("list only have single element");
+    }
+    else{
+        Nodes prev=null;
+        Nodes curent=Head;
+        Nodes next=Head.next;
+        while(curent!=null){
+            next=curent.next;
+            curent.next=prev;
+            prev=curent;
+            curent=next;
+        }
+        Head=prev;
     }
 }
 
@@ -42,5 +59,9 @@ public class Linked_List_Reverse {
     listrev.insertat(825);
     listrev.insertat(89);
     listrev.Displayrev();
+    listrev.reverse();
+    System.out.println("After Reversed");
+    listrev.Displayrev();
+
 }
 }
