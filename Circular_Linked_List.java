@@ -1,48 +1,44 @@
-class node{
-    node next;
-    int data;
+class NodeC{
+    int Data;
+    NodeC next;
+
 }
-class Clist{
-    node head;
-    Clist(){
-        head=null;
+class circularlist{
+    NodeC Head;
+public void insertbegin(int val){
+    NodeC temp=new NodeC();
+    if(Head==null){
+        temp.Data=val;
+        temp.next=temp;
+        Head=temp;
     }
-    public void insertatbegin(int val1){
-        node temp=new node();
-        if(head==null){
-            temp.data=val1;
-            temp.next=head;
-            head=temp;
-        }
-        else{
-            temp.data=val1;
-            temp.next=head;
-            head=temp;
-        }
+    else{
+        temp.Data=val;
+        temp.next=Head.next;
+        Head.next=temp;
+    }
     
-    }
-    public void display(){
-     node temp=head;
-     while(temp.next!=head){
-        System.out.println(temp.data);
+}
+public void display(){
+    NodeC temp=Head;
+    do{
+        System.out.println(temp.Data);
         temp=temp.next;
-     }   
-    }
+    }while(temp != Head);
 
 }
+}
+
 public class Circular_Linked_List {
-    public static void main(String[] args) {
-        Clist list1=new Clist();
-        list1.insertatbegin(8);
-        list1.insertatbegin(5);
-        list1.insertatbegin(12);
-        list1.insertatbegin(43);
-        list1.display();
-
-
-
-
-
+    public static void main(String args[]) {
+        circularlist clist=new circularlist();
+        clist.insertbegin(51);
+        clist.insertbegin(52);
+        clist.insertbegin(53);
+        clist.insertbegin(54);
+        clist.insertbegin(56);
+        //System.out.println(clist.Head);
+        clist.display();
     }
-    
+
 }
