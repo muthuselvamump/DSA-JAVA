@@ -26,8 +26,9 @@ public void display(){
     }
     else{
     do{
-        System.out.print(temp.Data + " ");
+        
         temp=temp.next;
+        System.out.print(temp.Data + "  ");
     }while(temp != Head);
     System.out.println();
 }
@@ -41,6 +42,10 @@ public void deleteatbeginc(){
     if(temp.next==temp){
         Head=null;
     }
+    else{
+        NodeC prev=temp.next;
+        temp.next=prev.next;
+    }
 
 }
 }
@@ -50,13 +55,15 @@ public class Circular_Linked_List {
         circularlist clist=new circularlist();
         clist.insertbegin(51);
         clist.insertbegin(52);
-        //clist.insertbegin(53);
-        //clist.insertbegin(54);
-        //clist.insertbegin(56);
+        clist.insertbegin(53);
+        clist.insertbegin(54);
+        clist.insertbegin(56);
         //System.out.println(clist.Head);
         clist.display();
         clist.deleteatbeginc();
         clist.display();
-    }
-
+        System.out.println("single element");
+        clist.deleteatbeginc();
+        clist.display();
+        }
 }
