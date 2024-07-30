@@ -21,10 +21,26 @@ public void insertbegin(int val){
 }
 public void display(){
     NodeC temp=Head;
+    if(Head==null){
+        System.out.println("list empty");
+    }
+    else{
     do{
-        System.out.println(temp.Data);
+        System.out.print(temp.Data + " ");
         temp=temp.next;
     }while(temp != Head);
+    System.out.println();
+}
+
+}
+public void deleteatbeginc(){
+    NodeC temp=Head;
+    if(temp==null){
+        System.out.println("list is empty");
+    }
+    if(temp.next==temp){
+        Head=null;
+    }
 
 }
 }
@@ -34,10 +50,12 @@ public class Circular_Linked_List {
         circularlist clist=new circularlist();
         clist.insertbegin(51);
         clist.insertbegin(52);
-        clist.insertbegin(53);
-        clist.insertbegin(54);
-        clist.insertbegin(56);
+        //clist.insertbegin(53);
+        //clist.insertbegin(54);
+        //clist.insertbegin(56);
         //System.out.println(clist.Head);
+        clist.display();
+        clist.deleteatbeginc();
         clist.display();
     }
 
