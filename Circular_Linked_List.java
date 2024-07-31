@@ -68,6 +68,16 @@ public void deletatlastc(){
     }
 
 }
+public void size(){
+    NodeC temp=Head;
+    int size=1;
+    while(temp.next!=Head){
+        temp=temp.next;
+        size++;
+    }
+    System.out.println("List Size = "+ size);
+
+}
 
 }
 
@@ -79,6 +89,7 @@ public class Circular_Linked_List {
         clist.insertbegin(53);
         clist.insertbegin(54);
         clist.insertbegin(56);
+        clist.size();
         //System.out.println(clist.Head);
         clist.display();
         clist.deleteatbeginc();
@@ -87,5 +98,7 @@ public class Circular_Linked_List {
        // clist.deleteatbeginc();
         clist.deletatlastc();
         clist.display();
+        System.out.println("size");
+        clist.size();
         }
 }
