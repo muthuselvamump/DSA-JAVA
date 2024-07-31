@@ -48,6 +48,27 @@ public void deleteatbeginc(){
     }
 
 }
+public void deletatlastc(){
+    NodeC temp=Head;
+    NodeC prev=new NodeC();
+    if(temp==null){
+        System.out.println("list is empty");    
+    }
+    else if(temp.next==temp){
+        Head=null;
+    }
+    else{
+        while(prev.next!=Head){
+            prev=temp;
+            temp=temp.next;
+
+        }
+        prev.next=temp.next;
+        Head=prev;
+    }
+
+}
+
 }
 
 public class Circular_Linked_List {
@@ -62,8 +83,9 @@ public class Circular_Linked_List {
         clist.display();
         clist.deleteatbeginc();
         clist.display();
-        System.out.println("single element");
-        clist.deleteatbeginc();
+        System.out.println("deletelast");
+       // clist.deleteatbeginc();
+        clist.deletatlastc();
         clist.display();
         }
 }
