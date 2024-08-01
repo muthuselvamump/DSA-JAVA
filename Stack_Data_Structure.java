@@ -1,12 +1,23 @@
 class stack{
-    int[]arr=new int[10];
+    int size=4;
+    int[]arr=new int[size];
     int count=0;
     public void push(int p){
-        count++;
+        if(count==size){
+            System.out.println("stack is full we cant push value:- "+p);
+        }
+        else{
         arr[count]=p;
+        count++;
+        }
     }
     public void pop(){
-        System.out.println(arr[count--]);
+        if(count==0){
+            System.out.println("empty stack");
+        }
+        else{
+        System.out.println(arr[--count]);
+        }
     }
 
 }
@@ -18,6 +29,7 @@ public class Stack_Data_Structure {
         s1.push(5);
         s1.push(3);
         s1.push(2);
+        s1.push(1);
         s1.pop();
         s1.pop();
 
