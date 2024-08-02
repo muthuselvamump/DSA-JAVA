@@ -23,7 +23,7 @@ class stack{
         }
     }
     public void peek(){
-        System.out.println(arr[count]);
+        System.out.println(arr[sizearr]);
     }
 
 }
