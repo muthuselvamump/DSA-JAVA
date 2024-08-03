@@ -25,6 +25,19 @@ class stackl{
             System.out.println(temp.Data);
             temp=temp.next;
         }
+    }
+    public void pop(){
+        nodes temp=head;
+        if(head==null){
+            System.out.println("stack is Empty");
+        }
+        else{
+            System.out.println(temp.Data);
+            head=temp.next;
+        }
+    }
+    public void peek(){
+        System.out.println("peek data is : "+head.Data);
     } 
 }
 public class Stack_Data_Structure_Using_Linkedlist {
@@ -34,6 +47,8 @@ public class Stack_Data_Structure_Using_Linkedlist {
         stacklink.push(7);
         stacklink.push(8);
         stacklink.push(9);
-        stacklink.display();
+        stacklink.pop();
+        stacklink.pop();
+        stacklink.peek();
     }
 }
