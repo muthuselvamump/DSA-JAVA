@@ -7,20 +7,20 @@ class LinearSearch{
         }
         return -1;
     }
-    public static int find(String str,char target){
+    public static String find(String str,char target){
         String cha="";
         int flag=0;
+        String pp=" ";
         for(int i=0;i<str.length();i++){
             if(str.charAt(i)==target){
-                cha +=i;
+                cha +=i+pp;
                 flag++;
             }
         }
         if(flag==0){
-            return -1;
+            return "-1";
         }
-         int j=Integer.parseInt(cha);
-         return j;
+         return cha;
     }
 
 }
