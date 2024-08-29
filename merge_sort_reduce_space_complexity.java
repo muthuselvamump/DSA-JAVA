@@ -6,6 +6,10 @@ class mergesortspace{
         int mid=(start+end)/2;
         mergesortinplace(arr, start, mid);
         mergesortinplace(arr, mid, end);
+        mergeing(arr, start, end, mid);
+    }
+    public static void mergeing(int arr[],int st,int en,int mi){
+        
     }
 }
 public class merge_sort_reduce_space_complexity {
