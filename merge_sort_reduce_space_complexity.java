@@ -27,7 +27,9 @@ class mergesortspace{
         while(j<en){
             k[k1++]=arr[j++];
         }
-       
+        for(int l=0;l<k.length;l++){
+            arr[st++]=k[l];
+        }
 
     }
 }
