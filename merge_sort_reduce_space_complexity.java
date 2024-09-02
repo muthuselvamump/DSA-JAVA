@@ -1,7 +1,7 @@
 import java.util.*;
 class mergesortspace{
     public static void mergesortinplace(int arr[],int start,int end){
-        if(end-start==1){
+        if(start+1==end){
             return;
         }
         int mid=(start+end)/2;
@@ -35,7 +35,7 @@ class mergesortspace{
 }
 public class merge_sort_reduce_space_complexity {
     public static void main(String []args){
-        int arr[]={2,1,3,4,2,5,6,2,1};
+        int arr[]={4,1,3,2,1,5};
         mergesortspace.mergesortinplace(arr, 0, arr.length);
         System.out.println(Arrays.toString(arr));
     }
