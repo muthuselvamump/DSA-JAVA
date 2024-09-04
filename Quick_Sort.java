@@ -1,8 +1,34 @@
 import java.util.Arrays;
 class quicksort{
-    public static void qsort(int[] arr,int low,int high){
-        
+    public static void qsort(int[] arr,int a,int b){
+        int low=a;
+        int high=b;
+        if(low>=high){
+            return;
+        }
+        int start=a;
+        int end=b;
+        int pivot=(low+high)/2;
+while(start<=end){
+        while(arr[start]<arr[pivot]){
+            start++;
+        }
+        while(arr[end]>arr[pivot]){
+            end--;
+        }
+        if(start<=end){
+            int temp=arr[start];
+            arr[start]=arr[end];
+            arr[end]=temp;
+            start++;
+            end--;
+        }
+
+
     }
+    qsort(arr, low,end);
+    qsort(arr,start,high);
+}
 }
 public class Quick_Sort {
     public static void main(String []args){
