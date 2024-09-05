@@ -35,10 +35,13 @@ public class Quick_Sort {
     public static void main(String []args){
        // int arr[]={5, 4, 1, 3, 6, 2, 1};
        int arr[] = {2,2,2,2,2}; 
+       int arr1[]={-5,-3,0,34,4,0,-5};
 
 
         quicksort.qsort(arr, 0, arr.length-1);
+        quicksort.qsort(arr1, 0, arr1.length-1);
         System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr1));
     }
     
 }
