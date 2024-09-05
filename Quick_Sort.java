@@ -9,11 +9,12 @@ class quicksort{
         int start=a;
         int end=b;
         int pivot=(low+high)/2;
+        int pval=arr[pivot];
 while(start<=end){
-        while(arr[start]<arr[pivot]){
+        while(arr[start]<pval){
             start++;
         }
-        while(arr[end]>arr[pivot]){
+        while(arr[end]>pval){
             end--;
         }
         if(start<=end){
@@ -32,7 +33,10 @@ while(start<=end){
 }
 public class Quick_Sort {
     public static void main(String []args){
-        int arr[]={2,1,4,5,3,2,5,8,1};
+       // int arr[]={5, 4, 1, 3, 6, 2, 1};
+       int arr[] = {2,2,2,2,2}; 
+
+
         quicksort.qsort(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
