@@ -10,11 +10,9 @@ class mergesortspaceb{
         mergeingb(arr, start, mid,end );
     }
     public static void mergeingb(int arr[],int st,int mi,int en){
-
         int index=en-st;
         for(int l=st;l<en-st;l++){
             for(int l1=st;l1<index-1;l1++){
-                
                 if(arr[l1]>arr[l1+1]){
                     int temp=arr[l1+1];
                     arr[l1+1]=arr[l1];
