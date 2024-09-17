@@ -26,6 +26,14 @@ class bsearch{
 
         return root;
     }
+    public void inorder(nodebs root){
+        if(root == null){
+            return;
+        }
+        inorder(root.left);
+        System.out.println(root.key);
+        inorder(root.right);
+    }
     
 }
 public class Binary_Search_Tree {
