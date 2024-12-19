@@ -19,22 +19,20 @@ class bsearch{
     }
     public void search(nodebs root,int val){
         nodebs temp=root;
-        int flag=0;
         while(temp !=null){
+            if(temp.key==val){
+                System.out.println("found");
+                return;
+            }
             if(temp.key>val){
                 temp=temp.left;
             }
             else{
                 temp=temp.right;
             }
-            if(temp!=null && temp.key==val){
-                System.out.println("found");
-                flag=1;
-            }
+            
         }
-        if(flag==0){
             System.out.println("not found");
-        }
 
     }
     public nodebs insert(nodebs root,int val){
@@ -72,7 +70,7 @@ public class Binary_Search_Tree {
         n.insert(60);
         n.insert(90);
         n.inorder(n.root);
-        n.search(n.root, 780);
+        n.search(n.root, 90);
         n.inorder(n.root);
 
 
