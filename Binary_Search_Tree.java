@@ -72,7 +72,8 @@ public class Binary_Search_Tree {
         n.insert(60);
         n.insert(90);
         n.inorder(n.root);
-      
+        n.search(n.root, 780);
+        n.inorder(n.root);
 
 
 
