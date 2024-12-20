@@ -17,6 +17,9 @@ class bsearch{
         insert(root,val);
         //System.out.println("return value"+temp.key);
     }
+    public void whileinsert(nodebs root,int val){
+        
+    }
     public void search(nodebs root,int val){
         nodebs temp=root;
         while(temp !=null){
