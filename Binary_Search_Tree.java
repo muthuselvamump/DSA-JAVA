@@ -14,11 +14,29 @@ class bsearch{
         root=new nodebs(val);
     }
     public void insert(int val){
-        insert(root,val);
+        //insert(root,val);
+        whileinsert(root,val);
         //System.out.println("return value"+temp.key);
     }
     public void whileinsert(nodebs root,int val){
-        
+        nodebs temp=root;
+        nodebs prev=new nodebs(0);
+        while(temp != null){
+            if(temp.key>val){
+                prev=temp;
+                temp=temp.left;
+            }
+            else{
+                prev=temp;
+                temp=temp.right;
+            }
+        }
+        if(prev.key>val){
+            prev.left=new nodebs(val);
+        }
+        else{
+            prev.right=new nodebs(val);
+        }
     }
     public void search(nodebs root,int val){
         nodebs temp=root;
