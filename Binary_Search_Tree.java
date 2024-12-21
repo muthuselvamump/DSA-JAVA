@@ -82,7 +82,20 @@ class bsearch{
         if(root == null){
             return root;
         }
-        if
+        if(root.key>val){
+            root.left=delete(root.left,val);
+        }
+        else if(root.key<val){
+            root.right=delete(root.right,val);
+        }
+        else{
+            if(root.right==null){
+                return root.left;
+            }
+            else if(root.left==null){
+                return root.right;
+            }
+        }
         return root;
     }
     
@@ -100,7 +113,9 @@ public class Binary_Search_Tree {
         n.inorder(n.root);
         n.search(n.root, 90);
         n.inorder(n.root);
-
+        System.out.println();
+        n.delete(n.root, 90);
+        n.inorder(n.root);
 
 
 
