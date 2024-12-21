@@ -78,6 +78,13 @@ class bsearch{
         System.out.print(root.key+" ");
         inorder(root.right);
     }
+    public nodebs delete(nodebs root, int val){
+        if(root == null){
+            return root;
+        }
+        if
+        return root;
+    }
     
 }
 public class Binary_Search_Tree {
