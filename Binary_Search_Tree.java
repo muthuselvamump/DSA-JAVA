@@ -98,8 +98,8 @@ class bsearch{
             else{
                 root.key=min(root.right);
               //  System.out.println("root key"+root.key);
-               // delete(root,root.key);
-                return root;
+               delete(root.right,root.key);
+                return root;             
 
             }
         }
@@ -112,7 +112,6 @@ class bsearch{
             prev=temp;
             temp=temp.left;
         }
-        System.out.println("root key"+root.key);
         return prev.key;
     }
     
@@ -121,17 +120,24 @@ public class Binary_Search_Tree {
     public static void main(String args[]){
         bsearch n=new bsearch(50);
         n.insert(40);
-       n.insert(20);
-        n.insert(25);
+      // n.insert(20);
+        //n.insert(25);
         n.insert(10);
         n.insert(70);
         n.insert(60);
         n.insert(90);
+        n.insert(85);
+        n.insert(95);
+        n.insert(75);
+        n.insert(96);
         n.inorder(n.root);
-       // n.search(n.root, 90);
+       n.search(n.root, 90);
+       System.out.println();
         n.inorder(n.root);
         System.out.println();
         n.delete(n.root, 70);
+        n.delete(n.root, 40);
+        n.delete(n.root, 95);
         n.inorder(n.root);
 
 
