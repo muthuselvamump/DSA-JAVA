@@ -78,6 +78,9 @@ class bsearch{
         System.out.print(root.key+" ");
         inorder(root.right);
     }
+    public void delete(){
+        
+    }
     public nodebs delete(nodebs root, int val){
         if(root == null){
             return root;
