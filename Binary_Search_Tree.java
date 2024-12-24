@@ -78,8 +78,8 @@ class bsearch{
         System.out.print(root.key+" ");
         inorder(root.right);
     }
-    public void delete(){
-        
+    public void delete(int val){
+        root=delete(root,val);
     }
     public nodebs delete(nodebs root, int val){
         if(root == null){
@@ -139,9 +139,9 @@ public class Binary_Search_Tree {
        System.out.println();
         n.inorder(n.root);
         System.out.println();
-        n.delete(n.root, 70);
-        n.delete(n.root, 40);
-        n.delete(n.root, 95);
+        n.delete( 70);
+        n.delete(40);
+        n.delete( 95);
         n.inorder(n.root);
 
 
