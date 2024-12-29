@@ -10,6 +10,7 @@ class nodeavl{
     int key;
     nodeavl left;
     nodeavl right;
+    int height;
 
 public nodeavl(int val){
     key=val;
@@ -41,6 +42,45 @@ public nodeavl inorder(nodeavl root){
     }
     return root;
 }
+public void delete(int val){
+    root=delete(root,val);
+}
+public nodeavl delete(nodeavl root,int val){
+   if(root==null){
+    return root;
+   }
+
+    if(root.key>val){
+        root.left=delete(root.left,val);
+    }
+    else if(root.key<val){
+        root.right=delete(root.right, val);
+    }
+    else{
+        if(root.left==null){
+            return root.right;
+        }
+        else if(root.right==null){
+            return root.left;
+        }
+        else{
+            root.key=min(root.right);
+            root.right=delete(root.right,root.key);
+
+        }
+        
+    }
+    return root;
+}
+public int min(nodeavl root){
+    nodeavl temp=new nodeavl(0);
+    while(root !=null){
+        temp=root;
+        root=root.left;
+    }
+    return temp.key;
+
+}
 
 
 }
@@ -59,6 +99,9 @@ public class AVL_Tree {
         n1.insert(95);
         n1.insert(75);
         n1.insert(96);
+        n1.inorder(n1.root);
+        n1.delete(100);
+        System.out.println();
         n1.inorder(n1.root);
 
     }
