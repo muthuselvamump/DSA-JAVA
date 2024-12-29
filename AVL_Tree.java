@@ -16,11 +16,18 @@ public nodeavl(int val){
     key=val;
     left=null;
     right=null;
+    height=0;
 }
 
   }
+  public int getheight(nodeavl node){
+    if(node == null){
+        return -1;
+    }
+    return node.height;
+  }
   public void insert(int val){
-    insert(root ,val);
+    root=insert(root ,val);
   }
 public nodeavl insert(nodeavl root,int val){
     if(root==null){
@@ -29,10 +36,69 @@ public nodeavl insert(nodeavl root,int val){
     if(val>root.key){
         root.right=insert(root.right,val);
     }
-    if(val<root.key){
+    else if(val<root.key){
         root.left=insert(root.left,val);
     }
+    else{
+        return root;
+    }
+    root.height=1+max(getheight(root.left),getheight(root.right));
+    /*if(val==75){
+    System.out.println("rootkey"+root.key+"  updated  "+root.height);
+    }*/
+    int balancefactor=getbalce(root);
+    //LL case
+    if(balancefactor>1 && val<root.left.key){
+        return rightrotate(root);
+    }
+    //LR case
+    if(balancefactor>1 && val>root.left.key){
+        root.left=leftrotate(root.left);
+        return rightrotate(root);
+    }
+    //RR Case
+    if(balancefactor<-1 && root.right.key>val ){
+        return leftrotate(root);
+    }
+    //RL case
+    if(balancefactor<-1 && root.right.key<val ){
+        root.right=rightrotate(root.right);
+        return leftrotate(root);
+    }
+     
     return root;
+}
+public int getbalce(nodeavl node){
+    return getheight(node.left)-getheight(node.right);
+}
+public nodeavl leftrotate(nodeavl x){
+    nodeavl y=x.left;
+    nodeavl t3=y.right;
+
+    y.right=x;
+    x.left=t3;
+    y.height=1+max(getheight(y.left),getheight(y.right));
+    x.height=1+max(getheight(x.left),getheight(x.right));
+    return y;
+
+
+
+}
+public nodeavl rightrotate(nodeavl x){
+    nodeavl y=x.right;
+    nodeavl t3=y.left;
+
+    y.left=x;
+    x.right=t3;
+    y.height=1+max(getheight(y.left),getheight(y.right));
+    x.height=1+max(getheight(x.left),getheight(x.right));
+    return y;
+
+
+
+}
+public int max(int left,int right){
+    return left>right?left:right;
 }
 public nodeavl inorder(nodeavl root){
     if(root !=null){
@@ -99,10 +165,10 @@ public class AVL_Tree {
         n1.insert(95);
         n1.insert(75);
         n1.insert(96);
-        n1.inorder(n1.root);
-        n1.delete(100);
-        System.out.println();
-        n1.inorder(n1.root);
+       n1.inorder(n1.root);
+       // n1.delete(100);
+        //System.out.println();
+        //n1.inorder(n1.root);
 
     }
     
