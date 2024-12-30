@@ -72,11 +72,11 @@ public int getbalce(nodeavl node){
     return getheight(node.left)-getheight(node.right);
 }
 public nodeavl leftrotate(nodeavl x){
-    nodeavl y=x.left;
-    nodeavl t3=y.right;
+    nodeavl y=x.right;
+    nodeavl t3=y.left;
 
-    y.right=x;
-    x.left=t3;
+    y.left=x;
+    x.right=t3;
     y.height=1+max(getheight(y.left),getheight(y.right));
     x.height=1+max(getheight(x.left),getheight(x.right));
     return y;
@@ -85,11 +85,11 @@ public nodeavl leftrotate(nodeavl x){
 
 }
 public nodeavl rightrotate(nodeavl x){
-    nodeavl y=x.right;
-    nodeavl t3=y.left;
+    nodeavl y=x.left;
+    nodeavl t3=y.right;
 
-    y.left=x;
-    x.right=t3;
+    y.right=x;
+    x.left=t3;
     y.height=1+max(getheight(y.left),getheight(y.right));
     x.height=1+max(getheight(x.left),getheight(x.right));
     return y;
