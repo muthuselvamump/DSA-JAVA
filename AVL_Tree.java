@@ -57,11 +57,11 @@ public nodeavl insert(nodeavl root,int val){
         return rightrotate(root);
     }
     //RR Case
-    if(balancefactor<-1 && root.right.key>val ){
+    if(balancefactor<-1 && root.right.key<val ){
         return leftrotate(root);
     }
     //RL case
-    if(balancefactor<-1 && root.right.key<val ){
+    if(balancefactor<-1 && root.right.key>val ){
         root.right=rightrotate(root.right);
         return leftrotate(root);
     }
@@ -77,6 +77,7 @@ public nodeavl leftrotate(nodeavl x){
 
     y.left=x;
     x.right=t3;
+    
     y.height=1+max(getheight(y.left),getheight(y.right));
     x.height=1+max(getheight(x.left),getheight(x.right));
     return y;
@@ -86,12 +87,14 @@ public nodeavl leftrotate(nodeavl x){
 }
 public nodeavl rightrotate(nodeavl x){
     nodeavl y=x.left;
-    nodeavl t3=y.right;
+    nodeavl t3=y.right; 
 
     y.right=x;
     x.left=t3;
-    y.height=1+max(getheight(y.left),getheight(y.right));
     x.height=1+max(getheight(x.left),getheight(x.right));
+    y.height=1+max(getheight(y.left),getheight(y.right));
+    System.out.println(y.height+"heigh");
+    //x.height=1+max(getheight(x.left),getheight(x.right));
     return y;
 
 
@@ -166,8 +169,9 @@ public class AVL_Tree {
         n1.insert(75);
         n1.insert(96);
        n1.inorder(n1.root);
+
        // n1.delete(100);
-        //System.out.println();
+        System.out.println(n1.root.key);
         //n1.inorder(n1.root);
 
     }
