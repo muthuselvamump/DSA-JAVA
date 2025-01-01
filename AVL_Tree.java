@@ -77,9 +77,9 @@ public nodeavl leftrotate(nodeavl x){
 
     y.left=x;
     x.right=t3;
-    
-    y.height=1+max(getheight(y.left),getheight(y.right));
     x.height=1+max(getheight(x.left),getheight(x.right));
+    y.height=1+max(getheight(y.left),getheight(y.right));
+    //x.height=1+max(getheight(x.left),getheight(x.right));
     return y;
 
 
