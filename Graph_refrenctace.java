@@ -19,8 +19,28 @@ class adjacency_List{
         }
     }
    }
-   public void BFS(){
-    
+   public void BFS(int v){
+    Queue<Integer> q=new LinkedList<>();
+    int sizeq=gal.size();
+    boolean []ch=new boolean[gal.size()];
+
+    q.add(v);
+    ch[v]=true;
+
+    while(q.size()!=0){
+        int vert=q.remove();
+        System.out.println("vertex"+vert);
+        for(int i=0;i<gal.get(vert).size();i++){
+            int ver=(int)gal.get(vert).get(i);
+            if(ch[ver]!=true){
+                q.add(ver);
+                ch[ver]=true;
+            }
+        }
+    }
+
+
+
    }
     
 }
@@ -41,7 +61,8 @@ public class Graph_refrenctace {
             al.add(3,4);
             al.add(4,1);
             al.add(4,0);
-            al.printal();
+            //al.printal();
+            al.BFS(0);
 
 
     }
