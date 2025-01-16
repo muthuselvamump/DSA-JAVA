@@ -19,6 +19,9 @@ class adjacency_List{
         }
     }
    }
+   public void BFS(){
+    
+   }
     
 }
 public class Graph_refrenctace {
