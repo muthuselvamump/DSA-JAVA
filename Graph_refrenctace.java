@@ -42,8 +42,14 @@ class adjacency_List{
 
 
    }
-   public void DFS(){
-    
+   public void DFS(int val){
+    boolean [] che=new boolean[gal.size()];
+    int vert=val;
+    che[vert]=true;
+    for(int i=0;i<gal.get(vert).size();i++){
+
+    }
+
    }
     
 }
