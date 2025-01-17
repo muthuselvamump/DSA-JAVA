@@ -42,6 +42,9 @@ class adjacency_List{
 
 
    }
+   public void DFS(){
+    
+   }
     
 }
 public class Graph_refrenctace {
