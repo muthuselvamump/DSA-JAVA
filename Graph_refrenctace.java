@@ -55,7 +55,10 @@ class adjacency_List{
     for(int i=0;i<gal.get(vert).size();i++){
         int verto=(int)gal.get(vert).get(i);
         
-        
+        if(che[verto]!=true){
+            //che[verto]=true;
+            DFS(verto);
+        }
         
     }
    // return st.pop();
