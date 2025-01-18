@@ -1,10 +1,14 @@
 import java.util.*;
 class adjacency_List{
    ArrayList<ArrayList> gal=new ArrayList<>();
+   int sizea=0;
+   boolean []che;
+   // Stack<Integer> st=new Stack<>();
    adjacency_List(int val){
     for(int i=0;i<val;i++){
         gal.add(new ArrayList<Integer>());
     }
+    che=new boolean[5];
    }
    public void add(int u,int v){
     gal.get(u).add(v);
@@ -29,7 +33,7 @@ class adjacency_List{
 
     while(q.size()!=0){
         int vert=q.remove();
-        System.out.println("vertex"+vert);
+        System.out.print(" "+vert);
         for(int i=0;i<gal.get(vert).size();i++){
             int ver=(int)gal.get(vert).get(i);
             if(ch[ver]!=true){
@@ -43,12 +47,18 @@ class adjacency_List{
 
    }
    public void DFS(int val){
-    boolean [] che=new boolean[gal.size()];
+    
     int vert=val;
+    //st.add(vert);
     che[vert]=true;
+    System.out.print(" "+vert);
     for(int i=0;i<gal.get(vert).size();i++){
-
+        int verto=(int)gal.get(vert).get(i);
+        
+        
+        
     }
+   // return st.pop();
 
    }
     
@@ -70,8 +80,13 @@ public class Graph_refrenctace {
             al.add(3,4);
             al.add(4,1);
             al.add(4,0);
-            //al.printal();
-            al.BFS(0);
+           // al.printal();
+           System.out.println("BFS"); 
+           al.BFS(0);
+           System.out.println();
+           System.out.println("DFS");
+            al.DFS(0);
+           // System.out.println(al.gal.size());
 
 
     }
